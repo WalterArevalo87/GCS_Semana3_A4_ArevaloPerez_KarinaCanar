@@ -1,0 +1,51 @@
+{
+  "app": {
+    "name": "ATM-System",
+    "environment": "development",
+    "version": "1.0.0"
+  },
+
+  "network": {
+    "host": "localhost",
+    "port": 8080,
+    "protocol": "https",
+    "timeout_ms": 5000
+  },
+
+  "database": {
+    "engine": "postgresql",
+    "host": "localhost",
+    "port": 5432,
+    "name": "atm_db_example",
+    "user": "atm_user_example",
+    "password": "CHANGE_ME"
+  },
+
+  "transactions": {
+    "currency": "USD",
+    "max_withdrawal_per_transaction": 500,
+    "max_withdrawal_per_day": 2000,
+    "min_withdrawal": 20,
+    "allowed_bills": [10, 20, 50, 100],
+    "transaction_timeout_seconds": 30
+  },
+
+  "security": {
+    "pin_max_attempts": 3,
+    "pin_lock_duration_minutes": 15,
+    "encryption_algorithm": "AES-256",
+    "session_timeout_minutes": 5
+  },
+
+  "logging": {
+    "level": "info",
+    "log_path": "/var/log/atm-system/",
+    "audit_enabled": true
+  },
+
+  "hardware": {
+    "cash_dispenser_id": "CD-EXAMPLE-001",
+    "card_reader_id": "CR-EXAMPLE-001",
+    "printer_enabled": true
+  }
+}
