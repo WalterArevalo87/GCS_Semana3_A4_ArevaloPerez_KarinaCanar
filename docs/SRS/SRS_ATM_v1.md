@@ -36,8 +36,7 @@ El sistema permitirá autenticar al usuario mediante una tarjeta y un PIN, consu
 | `RNF-FIA-01` | Fiabilidad | Al menos 99 de 100 transacciones simuladas deberán finalizar sin errores ni registros duplicados. | Resultado de las pruebas de transacciones. |
 | `RNF-USA-01` | Capacidad de interacción | El usuario deberá completar un retiro siguiendo como máximo cinco pasos desde la autenticación. | Revisión del flujo funcional. |
 | `RNF-MAN-01` | Mantenibilidad | Las funciones críticas deberán alcanzar una cobertura de pruebas mínima del 70 %. | Reporte de cobertura de pruebas. |
-
-> Nota: el requisito de rendimiento `RNF-PERF-01` se incorporará mediante el cambio controlado `CR-001`, después de establecer la línea base `v1.0`.
+| `RNF-PERF-01` | Eficiencia de desempeño | El sistema deberá completar al menos 95 de 100 operaciones simuladas en un tiempo máximo de 2 segundos por operación. | `TEST-PERF-01`: registro del tiempo individual de las 100 operaciones y porcentaje de cumplimiento. |
 
 ## 6. Reglas de negocio
 
