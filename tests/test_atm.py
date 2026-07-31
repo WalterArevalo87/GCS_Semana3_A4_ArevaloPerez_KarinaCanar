@@ -1,8 +1,10 @@
 import unittest
+
 from decimal import Decimal
 
 from src.atm import ATM
 
+from time import perf_counter
 
 class TestATM(unittest.TestCase):
 
@@ -106,6 +108,37 @@ class TestATM(unittest.TestCase):
         self.assertFalse(hasattr(account, "pin"))
         self.assertNotEqual(account.pin_hash, self.pin.encode())
 
+    def test_perf_01_completes_95_of_100_operations_within_two_seconds(self):
+        self.assertTrue(
+            self.atm.authenticate(self.card_number, self.pin)
+        )
+        response_times = []
+
+        for _ in range(100):
+            start_time = perf_counter()
+            balance = self.atm.get_balance(self.card_number)
+            elapsed_time = perf_counter() - start_time
+
+            response_times.append(elapsed_time)
+            self.assertEqual(balance, Decimal("1000.00"))
+
+        operations_within_limit = sum(
+            elapsed_time <= 2.0
+            for elapsed_time in response_times
+        )
+        compliance_percentage = (
+            operations_within_limit / len(response_times)
+        ) * 100
+
+        self.assertEqual(len(response_times), 100)
+        self.assertGreaterEqual(
+            compliance_percentage,
+            95.0,
+            (
+                f"Solo {operations_within_limit} de 100 operaciones "
+                "finalizaron en un máximo de 2 segundos."
+            )
+        )
 
 if __name__ == "__main__":
     unittest.main()
