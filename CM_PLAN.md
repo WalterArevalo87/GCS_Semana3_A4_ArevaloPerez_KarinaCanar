@@ -17,53 +17,16 @@ Este plan comprende los requisitos, la documentación de calidad, el análisis d
 
 4. Elementos de configuración
 
-### EC-01. Requisitos del sistema
-- **Archivo:** `SRS_ATM_v1.md`
-- **Ubicación:** `/docs/SRS/`
-- **Justificación:** Define los requisitos del sistema ATM. Sus cambios pueden afectar el alcance, el código y las pruebas.
-- **Responsable:** Analista / Product Owner.
-
-### EC-02. Modelo de calidad
-- **Archivo:** `Quality_Model.md`
-- **Ubicación:** `/docs/Quality/`
-- **Justificación:** Establece los atributos y métricas utilizados para evaluar la calidad del sistema.
-- **Responsable:** QA / Responsable de calidad.
-
-### EC-03. Impacto en el ciclo de vida
-- **Archivo:** `Lifecycle_Impact.md`
-- **Ubicación:** `/docs/Lifecycle/`
-- **Justificación:** Registra cómo afecta un cambio a cada fase del desarrollo.
-- **Responsable:** Analista / Líder técnico.
-
-### EC-04. Código fuente
-- **Elemento:** Código fuente del ATM
-- **Ubicación:** `/src/`
-- **Justificación:** Contiene la lógica y las operaciones principales del sistema.
-- **Responsable:** Desarrollador.
-
-### EC-05. Pruebas
-- **Elemento:** Pruebas del ATM
-- **Ubicación:** `/tests/`
-- **Justificación:** Permiten comprobar los requisitos y detectar errores o regresiones.
-- **Responsable:** QA / Desarrollador.
-
-### EC-06. Configuración
-- **Archivo:** `conf.example.json`
-- **Ubicación:** `/config/`
-- **Justificación:** Define parámetros de red, base de datos, seguridad, auditoría y hardware.
-- **Responsable:** DevOps / Desarrollador.
-
-### EC-07. Plan de configuración
-- **Archivo:** `CM_PLAN.md`
-- **Ubicación:** Raíz del repositorio.
-- **Justificación:** Establece las reglas para identificar, versionar y controlar los cambios.
-- **Responsable:** Responsable de configuración.
-
-### EC-08. Registro de cambios
-- **Archivo:** `CHANGELOG.md`
-- **Ubicación:** Raíz del repositorio.
-- **Justificación:** Registra la evolución y los cambios realizados en cada versión.
-- **Responsable:** Responsable de configuración / Equipo.
+| ID | Archivo o elemento | Ubicación | Justificación | Responsable |
+|---|---|---|---|---|
+| `EC-01` | `SRS_ATM_v1.md` | `/docs/SRS/` | Define los requisitos del sistema ATM; sus cambios afectan el alcance, el código y las pruebas. | Analista / Product Owner |
+| `EC-02` | `Quality_Model.md` | `/docs/Quality/` | Establece los atributos y las métricas utilizadas para evaluar la calidad del sistema. | QA / Responsable de calidad |
+| `EC-03` | `Lifecycle_Impact.md` | `/docs/Lifecycle/` | Documenta el impacto de un cambio en cada fase del ciclo de desarrollo. | Analista / Líder técnico |
+| `EC-04` | `atm.py` | `/src/` | Contiene la lógica de autenticación, consulta de saldo, retiros y registro de transacciones. | Desarrollador |
+| `EC-05` | `test_atm.py` | `/tests/` | Verifica los requisitos funcionales y permite detectar errores o regresiones. | QA / Desarrollador |
+| `EC-06` | `conf.example.json` | `/config/` | Define parámetros de red, base de datos, seguridad, auditoría y hardware. | DevOps / Desarrollador |
+| `EC-07` | `CM_PLAN.md` | Raíz del repositorio | Establece las reglas para identificar, versionar y controlar los cambios. | Responsable de configuración |
+| `EC-08` | `CHANGELOG.md` | Raíz del repositorio | Registra la evolución y los cambios incorporados en cada versión. | Responsable de configuración / Equipo |
 
 
 5. Reglas de identificación y versionado
